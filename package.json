@@ -1,0 +1,47 @@
+{
+  "name": "@animocabrands/tower-ethereum-migrations",
+  "version": "0.0.1",
+  "description": "Template for migrations projects based on hardhat-deploy",
+  "repository": "git@gitlab.outblaze.net:blockchain/ethereum/migrations/ethereum-migrations-template.git",
+  "author": "Animoca Brands",
+  "license": "ISC",
+  "resolutions": {
+    "websocket": "1.0.32"
+  },
+  "devDependencies": {
+    "@animoca/ethereum-migrations-core_library": "^0.0.2",
+    "@animoca/tower-ethereum-contracts": "=1.0.0",
+    "@animocabrands/ethereum-migrations-common": "1.0.0",
+    "ethers": "^5.0.27",
+    "hardhat": "^2.0.8"
+  },
+  "scripts": {
+    "postinstall": "node ./.setup.js",
+    "lint": "eslint \"**/*.{js,ts}\"",
+    "fix": "eslint --fix \"**/*.{js,ts}\"",
+    "format": "prettier --write \"**/*.{ts,js}\"",
+    "dev:localhost": "hardhat --network localhost deploy --watch",
+    "dev:localhost_qa": "hardhat --network localhost_qa deploy --watch",
+    "run:localhost": "cross-env HARDHAT_NETWORK=localhost node --files",
+    "run:localhost_qa": "cross-env HARDHAT_NETWORK=localhost_qa node --files",
+    "run:rinkeby": "cross-env HARDHAT_NETWORK=rinkeby node --files",
+    "run:rinkeby_qa": "cross-env HARDHAT_NETWORK=rinkeby_qa node --files",
+    "run:mainnet": "cross-env HARDHAT_NETWORK=mainnet node --files",
+    "ganache": "ganache-cli -g 1000000000",
+    "deploy": "hardhat deploy",
+    "deploy:localhost": "hardhat --network localhost deploy",
+    "deploy:localhost_qa": "hardhat --network localhost_qa deploy",
+    "deploy:rinkeby": "hardhat --network rinkeby deploy",
+    "deploy:rinkeby_qa": "hardhat --network rinkeby_qa deploy",
+    "deploy:mainnet": "hardhat --network mainnet deploy",
+    "deploy:matic": "hardhat --network matic deploy",
+    "deploy:mumbai": "hardhat --network mumbai deploy",
+    "deploy:mumbai_qa": "hardhat --network mumbai_qa deploy",
+    "clean:vscode": "rm -rf .vscode/extensions.json .vscode/launch.json .vscode/settings.json",
+    "clean:compile": "rm -rf cache",
+    "clean:deployments": "rm -rf deployments/localhost* deployments/hardhat*",
+    "clean:exports": "rm -rf exports/localhost* exports/hardhat*",
+    "clean": "run-s clean:compile clean:deployments clean:exports",
+    "prepack": "run-s clean clean:vscode"
+  }
+}

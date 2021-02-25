@@ -1,0 +1,1 @@
+node_modules/@animocabrands/ethereum-migrations-common/.prettierrc.js
