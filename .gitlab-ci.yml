@@ -1,0 +1,36 @@
+stages:
+  - deploy
+
+rinkeby:
+  stage: deploy
+  tags:
+    - config
+  image: asia.gcr.io/ab1-devops/docker-builder:latest
+  script:
+    - aws s3 cp exports/rinkeby.json s3://gamee-config/environments/4.rinkeby/deploymentContext.json --acl public-read
+    - aws s3 cp exports/rinkeby-min.json s3://gamee-config/environments/4.rinkeby/deploymentContext-min.json --acl public-read
+    - aws cloudfront create-invalidation --distribution-id $CONFIG_CDN --paths '/*'
+    - sleep 60
+
+  environment:
+    name: rinkeby
+    url: https://config.towertoken.com/environments/4.rinkeby/deploymentContext.json
+  when: manual #Manual deployment only for now to avoid overwriting the config from older branches
+  # only:   #Allow deployment from any branch as we sometime need the configs generated from a branch
+  # - master
+
+mainnet:
+  stage: deploy
+  tags:
+    - config
+  image: asia.gcr.io/ab1-devops/docker-builder:latest
+  script:
+    - aws s3 cp exports/mainnet.json s3://gamee-config/environments/1.mainnet/deploymentContext.json --acl public-read
+    - aws s3 cp exports/mainnet-min.json s3://gamee-config/environments/1.mainnet/deploymentContext-min.json --acl public-read
+    - aws cloudfront create-invalidation --distribution-id $CONFIG_CDN --paths '/*'
+    - sleep 60
+  environment:
+    name: mainnet
+    url: https://config.towertoken.com/environments/1.mainnet/deploymentContext.json
+  when: manual
+# This new deployment script will require --exclude option for the environments folder in the config deployment
