@@ -1,4 +1,6 @@
 node_modules/
+.npmrc*
+yarn-error.log
 
 .vscode/*
 !.vscode/settings.json.default
@@ -9,6 +11,17 @@ node_modules/
 !.env.example
 
 cache/
+artifacts/*
+!artifacts/build-info/
+!artifacts/contracts/
+!artifacts/imports/
+
+coverage*
+.coverage*
+smartcheck*
+flattened/
+docs/
+gas-report.md
 
 deployments/hardhat*
 deployments/localhost*
@@ -20,4 +33,7 @@ generated/localhost*
 generated/hardhat*
 
 .mnemonic*
-yarn-error.log
+
+hardhat.config.last.json
+
+.DS_Store

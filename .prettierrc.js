@@ -1,1 +1,3 @@
-node_modules/@animocabrands/ethereum-migrations-common/.prettierrc.js
+module.exports = {
+  ...require('@animoca/ethereum-hardhat-bootstrap/.prettierrc'),
+};
