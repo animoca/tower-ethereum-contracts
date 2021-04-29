@@ -8,14 +8,14 @@ const {chests} = require('../src/constants/TOWERChests');
 
 module.exports = async (hre) => {
   const {execute, log} = hre.deployments;
-  const {TOWERChestSale_holder} = await hre.getNamedAccounts();
+  const {TOWERChests_holder} = await hre.getNamedAccounts();
   const {toApprove, saleAddress} = hre.skipData;
 
   await batchDo(
     execute,
     toApprove.map((deployment) => {
-      log(`TOWERChests: approving sale contract by the holder (chest=${deployment} holder=${TOWERChestSale_holder} spender=${saleAddress})...`);
-      return [deployment, {from: TOWERChestSale_holder}, 'approve', saleAddress, MaxUint256];
+      log(`TOWERChests: approving sale contract by the holder (chest=${deployment} holder=${TOWERChests_holder} spender=${saleAddress})...`);
+      return [deployment, {from: TOWERChests_holder}, 'approve', saleAddress, MaxUint256];
     }),
     `TOWERChests: approving sale contract by the holder`
   );
@@ -26,7 +26,7 @@ module.exports.skip = multiSkip([
   skipIfChainIdIs(['1']), // is run externally on mainnet
   async (hre) => {
     const {get, read, log} = hre.deployments;
-    const {TOWERChestSale_holder} = await hre.getNamedAccounts();
+    const {TOWERChests_holder} = await hre.getNamedAccounts();
 
     const sale = await get('TOWERChestSale');
     const saleAddress = sale.address;
@@ -36,7 +36,7 @@ module.exports.skip = multiSkip([
     const toApprove = [];
 
     for (const chest of chests) {
-      const allowance = await read(chest.deployment, {}, 'allowance', TOWERChestSale_holder, saleAddress);
+      const allowance = await read(chest.deployment, {}, 'allowance', TOWERChests_holder, saleAddress);
 
       if (!allowance.eq(MaxUint256)) {
         toApprove.push(chest.deployment);

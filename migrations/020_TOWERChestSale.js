@@ -7,16 +7,16 @@ const {skusCapacity, tokensPerSkuCapacity} = require('../src/constants/TOWERChes
 
 module.exports = async (hre) => {
   const {deploy, log} = hre.deployments;
-  const {TOWERChestSale_deployer, TOWERChestSale_holder, TOWERChestSale_payoutWallet} = await hre.getNamedAccounts();
+  const {TOWERChestSale_deployer, TOWERChests_holder, TOWERChestSale_payoutWallet} = await hre.getNamedAccounts();
 
   log(
-    `TOWERChestSale: deploying (holder=${TOWERChestSale_holder} payoutWallet=${TOWERChestSale_payoutWallet} ` +
+    `TOWERChestSale: deploying (holder=${TOWERChests_holder} payoutWallet=${TOWERChestSale_payoutWallet} ` +
       `skusCapacity=${skusCapacity} tokensPerSkuCapacity=${tokensPerSkuCapacity})...`
   );
 
   await deploy('TOWERChestSale', {
     contract: 'TOWERChestSale',
-    args: [TOWERChestSale_holder, TOWERChestSale_payoutWallet, skusCapacity, tokensPerSkuCapacity],
+    args: [TOWERChests_holder, TOWERChestSale_payoutWallet, skusCapacity, tokensPerSkuCapacity],
     from: TOWERChestSale_deployer,
     log: true,
   });

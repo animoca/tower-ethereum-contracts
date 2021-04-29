@@ -13,7 +13,6 @@ const TOWER_holder = {
 const TOWERChests_holder = {
   default: 0,
   // 1: '', // TODO: define appropriate account for mainnet
-  // 4: '', // TODO: define appropriate account for rinkeby
 };
 
 const TOWERChestSale_payoutWallet = {
@@ -36,7 +35,6 @@ module.exports = {
 
     // TOWER Chest Sale
     TOWERChestSale_deployer: TOWER_deployer,
-    TOWERChestSale_holder: TOWERChests_holder,
     TOWERChestSale_payoutWallet,
   },
   namedGroups: {},

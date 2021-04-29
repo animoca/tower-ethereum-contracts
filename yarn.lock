@@ -40,8 +40,8 @@
 
 "@animoca/tower-ethereum-contracts-2.0.0@npm:@animoca/tower-ethereum-contracts@2.0.0":
   version "2.0.0"
-  resolved "https://nexus3.animocabrands.com/repository/npm-group/@animoca/tower-ethereum-contracts/-/tower-ethereum-contracts-2.0.0.tgz#0f2982832a80765d92f68ca054a9270e95bfefcb"
-  integrity sha512-RbMIusfPfo7CNCjdyf1vlSNNDns3eeGHiC4TeB8vxTRwy9U66+7BpoNLVVS7yM6ZIqJXaU9Z5aLXHPvjuV5JXQ==
+  resolved "https://nexus3.animocabrands.com/repository/npm-group/@animoca/tower-ethereum-contracts/-/tower-ethereum-contracts-2.0.0.tgz#ff6b43b61142568ac53dac2757f7bac098b1d8c1"
+  integrity sha512-uP8F9+vHyCkpr9F+RQ2lc5g2DevqJQxVK+ggZcs4Rw2QSo0ADyv8flvLZxi1/vExOyTI28yqINf9BKU77o+TLw==
 
 "@animocabrands/ethereum-migrations-common@^1.0.0":
   version "1.0.0"

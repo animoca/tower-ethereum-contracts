@@ -4,19 +4,19 @@ const {skipIfChainIdIs, multiSkip} = require('@animoca/ethereum-migrations-core_
 
 module.exports = async (hre) => {
   const {deploy, log} = hre.deployments;
-  const {TOWERChests_deployer} = await hre.getNamedAccounts();
+  const {TOWERChests_deployer, TOWERChests_holder} = await hre.getNamedAccounts();
   const {toDeploy} = hre.skipData;
 
   for (const chest of toDeploy) {
     log(
-      `TOWERChests: deploying (holder=${TOWERChests_deployer}, name=${chest.name}, symbol=${chest.symbol}, decimals=${chest.decimals}, version=${
+      `TOWERChests: deploying (name=${chest.name}, symbol=${chest.symbol}, decimals=${chest.decimals}, version=${
         chest.version
-      }, supply=${chest.supply.toString()})...`
+      }, holder=${TOWERChests_holder}, supply=${chest.supply.toString()})...`
     );
 
     await deploy(chest.deployment, {
       contract: 'TOWERChest',
-      args: [chest.name, chest.symbol, chest.decimals, chest.version, chest.supply],
+      args: [chest.name, chest.symbol, chest.decimals, chest.version, TOWERChests_holder, chest.supply],
       from: TOWERChests_deployer,
       log: true,
     });
