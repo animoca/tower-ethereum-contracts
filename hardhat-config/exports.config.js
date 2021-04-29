@@ -1,6 +1,6 @@
 module.exports = {
   toExport: {
-    deployments: ['TOWER'],
+    deployments: ['TOWER', 'TOWERChest-BRNZ', 'TOWERChest-SLVR', 'TOWERChest-GOLD', 'TOWERChestSale'],
     // namedAccounts: [],
     // namedGroups: [],
   },
