@@ -10,6 +10,17 @@ const TOWER_holder = {
   4: '0xE82896A9497335a0575dd66E8Cc7103bAfCc8841',
 };
 
+const TOWERChests_holder = {
+  default: 0,
+  // 1: '', // TODO: define appropriate account for mainnet
+};
+
+const TOWERChestSale_payoutWallet = {
+  default: 0,
+  // 1: '', // TODO: define appropriate account for mainnet
+  // 4: '', // TODO: define appropriate account for rinkeby
+};
+
 module.exports = {
   namedAccounts: {
     TOWER_deployer,
@@ -17,6 +28,14 @@ module.exports = {
     // TOWER
     TOWER_owner: TOWER_deployer,
     TOWER_holder,
+
+    // TOWER Chests
+    TOWERChests_deployer: TOWER_deployer,
+    TOWERChests_holder,
+
+    // TOWER Chest Sale
+    TOWERChestSale_deployer: TOWER_deployer,
+    TOWERChestSale_payoutWallet,
   },
   namedGroups: {},
 };
