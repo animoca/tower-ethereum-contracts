@@ -69,7 +69,7 @@
   "devDependencies": {
     "@animoca/ethereum-hardhat-bootstrap": "^0.0.1",
     "@animoca/ethereum-migrations-core_library": "=1.0.0",
-    "@animoca/tower-ethereum-contracts-2.0.1": "npm:@animoca/tower-ethereum-contracts@2.0.1",
+    "@animoca/tower-ethereum-contracts-2.0.2": "npm:@animoca/tower-ethereum-contracts@2.0.2",
     "@animocabrands/ethereum-migrations-common": "^1.0.0",
     "ethers": "^5.0.32",
     "hardhat": "^2.1.0"
