@@ -9,14 +9,14 @@ module.exports = async (hre) => {
 
   for (const chest of toDeploy) {
     log(
-      `TOWERChests: deploying (name=${chest.name}, symbol=${chest.symbol}, decimals=${chest.decimals}, version=${
-        chest.version
+      `TOWERChests: deploying (name=${chest.name}, symbol=${chest.symbol}, decimals=${chest.decimals}, version=${chest.version}, tokenURI=${
+        chest.tokenURI
       }, holder=${TOWERChests_holder}, supply=${chest.supply.toString()})...`
     );
 
     await deploy(chest.deployment, {
       contract: 'TOWERChest',
-      args: [chest.name, chest.symbol, chest.decimals, chest.version, TOWERChests_holder, chest.supply],
+      args: [chest.name, chest.symbol, chest.decimals, chest.version, chest.tokenURI, TOWERChests_holder, chest.supply],
       from: TOWERChests_deployer,
       log: true,
     });
