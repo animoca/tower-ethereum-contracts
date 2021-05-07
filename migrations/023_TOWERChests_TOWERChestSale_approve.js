@@ -23,7 +23,7 @@ module.exports = async (hre) => {
 
 module.exports.skip = multiSkip([
   // async () => true,
-  skipIfChainIdIs(['1']), // is run externally on mainnet
+  // skipIfChainIdIs(['1']), // is run externally on mainnet
   async (hre) => {
     const {get, read, log} = hre.deployments;
     const {TOWERChests_holder} = await hre.getNamedAccounts();

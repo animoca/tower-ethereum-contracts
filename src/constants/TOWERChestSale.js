@@ -26,7 +26,7 @@ const skuInfos = [
 
 const skusCapacity = chests.length;
 const tokensPerSkuCapacity = BigNumber.from('1'); // TOWER token only
-const maxQuantityPerPurchase = BigNumber.from('10'); // TODO: define appropriate amount
+const maxQuantityPerPurchase = BigNumber.from('3');
 const notificationReceiver = AddressZero;
 
 module.exports = {
