@@ -26,8 +26,8 @@ module.exports = async (hre) => {
 };
 module.exports.skip = multiSkip([
   // async () => true,
-  skipIfChainIdIs(['1']), // migration done
-  skipIfChainIdIs(['4']), // migration done
+  skipIfChainIdIs(['1']), // migration completed
+  skipIfChainIdIs(['4']), // migration completed
   skipIfContractExists('TOWER'), // contract guard
 ]);
 module.exports.tags = ['TOWER'];
