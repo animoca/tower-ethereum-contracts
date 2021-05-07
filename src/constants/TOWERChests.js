@@ -7,7 +7,7 @@ const chests = [
     symbol: 'TWR.BRNZ',
     decimals: 18,
     version: '1',
-    tokenURI: 'https://TOWERChest-BRNZ.json', // TODO to be confirmed
+    tokenURI: 'https://assets.crazydefenseheroes.com/opensea/metadata/bronze_chest_metadata.json',
     supply: parseEther('3500'),
   },
   {
@@ -16,7 +16,7 @@ const chests = [
     symbol: 'TWR.SLVR',
     decimals: 18,
     version: '1',
-    tokenURI: 'https://TOWERChest-SLVR.json', // TODO to be confirmed
+    tokenURI: 'https://assets.crazydefenseheroes.com/opensea/metadata/silver_chest_metadata.json',
     supply: parseEther('2500'),
   },
   {
@@ -25,7 +25,7 @@ const chests = [
     symbol: 'TWR.GOLD',
     decimals: 18,
     version: '1',
-    tokenURI: 'https://TOWERChest-GOLD.json', // TODO to be confirmed
+    tokenURI: 'https://assets.crazydefenseheroes.com/opensea/metadata/gold_chest_metadata.json',
     supply: parseEther('500'),
   },
 ];

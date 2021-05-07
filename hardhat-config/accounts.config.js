@@ -11,14 +11,11 @@ const TOWER_holder = {
 };
 
 const TOWERChests_holder = {
-  default: 0,
-  // 1: '', // TODO: define appropriate account for mainnet
+  default: 1, // mainnet: 0x861C2F7a406CCb81B49501f5559D9F77b0bd3b9A
 };
 
 const TOWERChestSale_payoutWallet = {
-  default: 0,
-  // 1: '', // TODO: define appropriate account for mainnet
-  // 4: '', // TODO: define appropriate account for rinkeby
+  default: '0x64eD31bFCeF24226B4997a5849D2AD9E5751d4D7',
 };
 
 module.exports = {

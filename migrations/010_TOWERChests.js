@@ -24,7 +24,7 @@ module.exports = async (hre) => {
 };
 module.exports.skip = multiSkip([
   // async () => true,
-  skipIfChainIdIs(['1']), // migration to be planned
+  skipIfChainIdIs(['1']), // migration completed
   skipIfChainIdIs(['4']), // migration completed
   async (hre) => {
     const {getOrNull, log} = hre.deployments;
