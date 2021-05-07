@@ -8,7 +8,7 @@ rinkeby:
   image: asia.gcr.io/ab1-devops/docker-builder:latest
   script:
     - aws s3 cp exports/rinkeby.json s3://quidd-config/environments/4.rinkeby/deploymentContext.json --acl public-read
-    - aws s3 cp exports/rinkeby-min.json s3://gamee-config/environments/4.rinkeby/deploymentContext-min.json --acl public-read
+    - aws s3 cp exports/rinkeby-min.json s3://quidd-config/environments/4.rinkeby/deploymentContext-min.json --acl public-read
     - aws cloudfront create-invalidation --distribution-id $CONFIG_CDN --paths '/*'
     - sleep 60
 
